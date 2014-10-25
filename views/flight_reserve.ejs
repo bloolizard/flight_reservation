@@ -4,59 +4,73 @@
   <meta charset="UTF-8">
   <title></title>
   <style>
+      *{
+          margin: 0;
+          padding: 0;
+      }
   body {
       font: 200 1em 'Helvetica Neue', 'Segoe UI', 'Droid Sans', 'Helvetica';
       margin: 0;
       padding-top: 0;
+      display: block;
+      background-color: #DDDDDD;
   }
 
   .container {
+
       margin-left: auto;
       margin-right: auto;
       width: 950px;
+
   }
-  .content {
-     padding-top: 80px;
+
+  .wrap {
+      padding-top: 5em;
+
 
   }
 
   .flex {
-      min-height: 800px;
-        display: flex;
+      background-color: #FFF;
+
+      min-height: 500px;
+      display: flex;
   }
 
   .col-span-2 {
-      background-color: lightgray;
       -webkit-flex: 3 1 60%;
   }
 
   .col-span-1 {
-      background-color: #404040;
       min-width: 200px;
   }
 
-  #header {
-      background-color: #A8A8A8;
+  .main {
+      border-left: 1px dotted;
+
+      border-right: 1px dotted;
+
+  }
+
+  header {
+      padding:0;
+      background-color: #FFFFFF;
       width: 100%;
       height: 10%;
       min-height: 80px;
-      margin-top: 0;
-      /*position: fixed;*/
       text-align: center;
+      position: relative;
       display: block;
-      position: fixed;
   }
 
   #right-nav {
-      background-color: #606060;
       /*position: fixed;*/
   }
 
-  #footer {
-      background-color: #A8A8A8;
+  footer {
+      margin-bottom: 0px;
       width: 100%;
-      height: 2.5%;
-      position: fixed;
+      min-height: 100px;
       bottom: 0;
       left: 0;
       text-align: center;
@@ -70,37 +84,65 @@
         background-color: blue;
     }
 
+    header h1 {
+        padding: 0.8em 0;
+        text-transform: uppercase;
+    }
+
       .item {
           padding: 1em;
+          line-height: 1.5;
+          max-width: 250px;
       }
 
     ul {
         list-style-type: none;
     }
 
+      button {
+          float: right;
+      }
+
+      a:link, a:visited {
+          color: #000;
+      }
+
+      a:hover {
+          padding: 5%;
+          background-color: #5D5C5C;
+          color: white;
+      }
+
   </style>
 </head>
 <body>
-<div id="header">
+<header>
     <div class="container">    <h1>Flight Reservation</h1>
     </div>
-</div>
+</header>
+
 
 <div class="container content">
 
+<div class="wrap">
 <div class="flex">
 <div class="col-span-1">
     <section class="item">
-        <div class="square"></div>
+
     </section>
 
 </div>
-<div class="col-span-2"><section id="main" class="item">
+<div class="col-span-2 main"><section id="main" class="item">
+        <label for="departure_city">Departure City:</label>
+        <input type="text" id="departure_city" name="name" placeholder="Departure City" required/><br/>
 
-        Departure City:<input type="text" id="departure_city" name="name" placeholder="Departure City" required/><br/>
-        Arrival City:<input type="text" id="departure_city" name="name" placeholder="Arrival City" required/><br/>
+        <label for="arrival_city">Arrival City:</label>
+        <input type="text" id="arrival_city" name="name" placeholder="Arrival City" required/><br/>
+
+
         Depart Date:<input type="text" id="depart_date" name="name" placeholder="Depart Date" required/><br/>
         Return Date:<input type="text" id="return_date" name="name" placeholder="Return Date" required/><br/>
+        <br/>
         <button id="submit">Record Flight</button>
 
         <br/></section></div>
@@ -113,8 +155,9 @@
 </div>
 </div>
 </div>
+</div>
 
-<div id="footer">@Go Live Labs 2013</div>
+<footer><br/><br/><br/>@Go-Live Labs 2013</footer>
 
 <script>
     window.addEventListener('load', function(){
