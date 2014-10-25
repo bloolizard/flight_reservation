@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Scheduler</title>
+    <link rel="stylesheet" type="text/css" href="/css/base.css">
+</head>
+<body>
+<div class="row">
+    <h1>Scheduler</h1></div>
+<form name="candidate">
+    <div class="row">
+        <input type="text" id="name" name="name" placeholder="Name" required/>
+        <input type="tel" id="phone" name="phone" placeholder="Phone" required/>
+
+    </div>
+    <div class="row">
+        <textarea name="notes" id="notes" placeholder="Notes" cols="30" rows="10"></textarea>
+
+    </div>
+</form>
+<div class="row">
+    <button id="submit">Save Candidate</button>
+    <div class="clearfix"></div>
+</div>
+
+<table class="row">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Notes</th>
+
+    </tr>
+    </thead>
+
+    <tbody id="candidates_info">
+    </tbody>
+</table>
+<script src="/js/scheduler_src.js"></script>
+</body>
+</html>

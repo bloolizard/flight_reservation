@@ -1,0 +1,81 @@
+/* Starting Base CSS File*/
+body {
+    font: 200 1em 'Helvetica Neue', 'Segoe UI', 'Droid Sans', 'Helvetica';
+    padding: 3em;
+    margin: 0;
+}
+
+input, select, textarea, button {
+    font: 200 1em 'Helvetica Neue', 'Segoe UI', 'Droid Sans', 'Helvetica';
+    outline: none;
+    border: 1px solid #eee;
+    padding: 0.35em 0.5em;
+    background-color: transparent;
+    text-align: left;
+}
+
+input[type='text'], input[type='tel']{
+    width: 45%;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+}
+
+#phone {
+    float:right;
+}
+
+#notes {
+    padding: 0 5%;
+    width: 90%;
+}
+
+div.row, table.row {
+    /*background-color: #eee;*/
+    width: 60%;
+    margin: 1em auto;
+}
+
+button {
+    background-color: #ccc;
+    color: black;
+    border-radius: 0.15em;
+    float: right;
+}
+
+div.clearfix {
+    clear: both;
+}
+
+table {
+    background-color: #F7F8F9;
+    border-spacing: 0;
+    color: #298CDA;
+    padding: 0.2em;
+}
+
+
+thead {
+    border-bottom: black;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+}
+
+th, td {
+    padding: 5px;
+
+}
+
+
+h1 {
+    text-align: center;
+}
+
+tbody {
+
+    background-color: white;
+}
+
+#notes {
+    resize: none;
+}
