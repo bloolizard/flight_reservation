@@ -95,7 +95,7 @@
     </section>
 
 </div>
-<div class="col-span-2"><section class="item">
+<div class="col-span-2"><section id="main" class="item">
 
         Departure City:<input type="text" id="departure_city" name="name" placeholder="Departure City" required/><br/>
         Arrival City:<input type="text" id="departure_city" name="name" placeholder="Arrival City" required/><br/>
@@ -107,7 +107,7 @@
 <div id="right-nav" class="col-span-1">
     <section class="item">
         <ul>
-            <li><a href="#">My Flight Accounts</a></li>
+            <li><a href="#" id="my_flight_act_btn">My Flight Accounts</a></li>
         </ul>
     </section>
 </div>
@@ -117,6 +117,30 @@
 <div id="footer">@Go Live Labs 2013</div>
 
 <script>
+    window.addEventListener('load', function(){
+    // grab main window
+        var main = document.getElementById('main');
+        console.log('main');
+
+        var flt_act_btn = document.getElementById('my_flight_act_btn');
+        flt_act_btn.addEventListener('click', function(){
+           console.log('Hey I was clicked');
+            // clear the main section
+
+            // perform an AJAX call
+
+            // display the AJAX on the page
+            // in a new element way.
+
+
+            main.innerHTML = "I got some new data for you.  And I can show you your flights.";
+
+            var return_btn = document.createElement('button');
+            return_btn.innerHTML = "Go Back"
+            main.appendChild(return_btn);
+        });
+    });
+
 </script>
 </body>
 </html>
