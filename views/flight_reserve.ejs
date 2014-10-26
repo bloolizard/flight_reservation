@@ -3,152 +3,7 @@
 <head lang="en">
   <meta charset="UTF-8">
   <title></title>
-  <style>
-      *{
-          margin: 0;
-          padding: 0;
-      }
-  body {
-      font: 200 1em 'Helvetica Neue', 'Segoe UI', 'Droid Sans', 'Helvetica';
-      margin: 0;
-      padding-top: 0;
-      display: block;
-      background-color: #DDDDDD;
-  }
-
-  .container {
-
-      margin-left: auto;
-      margin-right: auto;
-      width: 950px;
-
-  }
-
-  .wrap {
-      padding-top: 5em;
-
-
-  }
-
-  .flex {
-      background-color: #FFF;
-
-      min-height: 500px;
-      overflow: auto;
-      width: 100%;
-  }
-
-  .col-span-1, .col-span-2 {
-      vertical-align: top;
-
-  }
-
-  .col-span-2 {
-      width: 55%;
-      display: inline-block;
-
-
-  }
-
-  .col-span-1 {
-      width: 20%;
-      display: inline-block;
-
-  }
-
-  .main {
-      min-height: 500px;
-      border-left: 1px dotted;
-      border-right: 1px dotted;
-
-  }
-
-  header {
-      padding:0;
-      background-color: #FFFFFF;
-      width: 100%;
-      height: 10%;
-      min-height: 80px;
-      text-align: center;
-      position: relative;
-      display: block;
-  }
-
-  #right-nav {
-      /*position: fixed;*/
-  }
-
-  footer {
-      margin-bottom: 0px;
-      width: 100%;
-      min-height: 100px;
-      bottom: 0;
-      left: 0;
-      text-align: center;
-      padding-top: 0.5em;
-      padding-bottom: 0.5em;
-  }
-    .square {
-        width: 100px;
-        height: 100px;
-        display: inline-block;
-        background-color: blue;
-    }
-
-    header h1 {
-        padding: 0.8em 0;
-        text-transform: uppercase;
-    }
-
-      .item {
-          padding: 1em;
-          line-height: 1.5;
-      }
-
-    ul {
-        list-style-type: none;
-    }
-
-      button {
-          float: right;
-      }
-
-      a:link, a:visited {
-          color: #000;
-      }
-
-      a:hover {
-          padding: 5%;
-          background-color: #5D5C5C;
-          color: white;
-      }
-
-      /*Input Elements*/
-      label, input {
-          display: inline-block;
-      }
-
-      label {
-          width: 30%;
-          text-align: right;
-      }
-
-      label + input {
-          width: 30%;
-          margin: 0 30% 0 4%;
-
-      }
-
-      input + input {
-          float: right;
-      }
-      button {
-          margin: 0 34% 0 4%;
-
-      }
-
-
-  </style>
+    <link rel="stylesheet" href="/css/flt_reserve_base.css"/>
 </head>
 <body>
 <header>
@@ -168,19 +23,19 @@
 
 </div>
 <div class="col-span-2 main"><section id="main" class="item">
-        <form action="">
+        <form name="flt_reserve_form" action="">
             <label for="departure_city">Departure City:</label>
-            <input type="text" id="departure_city" name="name" placeholder="Departure City" required/><br/>
+            <input type="text" id="departure_city" name="departcity" placeholder="Departure City" required/><br/>
 
             <label for="depart_date">Depart Date:</label>
-            <input type="text" id="depart_date" name="name" placeholder="Depart Date" required/><br/>
+            <input type="text" id="depart_date" name="departdate" placeholder="Depart Date" required/><br/>
 
 
             <label for="arrival_city">Arrival City:</label>
-            <input type="text" id="arrival_city" name="name" placeholder="Arrival City" required/><br/>
+            <input type="text" id="arrival_city" name="arrivalcity" placeholder="Arrival City" required/><br/>
 
             <label for="return_date">Return Date:</label>
-            <input type="text" id="return_date" name="name" placeholder="Return Date" required/><br/>
+            <input type="text" id="return_date" name="returndate" placeholder="Return Date" required/><br/>
             <br/>
             <button id="submit">Record Flight</button>
 
@@ -200,31 +55,7 @@
 
 <footer><br/><br/><br/>@Go-Live Labs 2013</footer>
 
-<script>
-    window.addEventListener('load', function(){
-    // grab main window
-        var main = document.getElementById('main');
-        console.log('main');
-
-        var flt_act_btn = document.getElementById('my_flight_act_btn');
-        flt_act_btn.addEventListener('click', function(){
-           console.log('Hey I was clicked');
-            // clear the main section
-
-            // perform an AJAX call
-
-            // display the AJAX on the page
-            // in a new element way.
-
-
-            main.innerHTML = "I got some new data for you.  And I can show you your flights.";
-
-            var return_btn = document.createElement('button');
-            return_btn.innerHTML = "Go Back"
-            main.appendChild(return_btn);
-        });
-    });
-
-</script>
+<script src="/js/flt_reserve_src.js"></script>
+<script src="/js/flt_reserve_test.js"></script>
 </body>
 </html>
