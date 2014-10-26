@@ -34,20 +34,31 @@
       background-color: #FFF;
 
       min-height: 500px;
-      display: flex;
+      overflow: auto;
+      width: 100%;
+  }
+
+  .col-span-1, .col-span-2 {
+      vertical-align: top;
+
   }
 
   .col-span-2 {
-      -webkit-flex: 3 1 60%;
+      width: 55%;
+      display: inline-block;
+
+
   }
 
   .col-span-1 {
-      min-width: 200px;
+      width: 20%;
+      display: inline-block;
+
   }
 
   .main {
+      min-height: 500px;
       border-left: 1px dotted;
-
       border-right: 1px dotted;
 
   }
@@ -92,7 +103,6 @@
       .item {
           padding: 1em;
           line-height: 1.5;
-          max-width: 250px;
       }
 
     ul {
@@ -112,6 +122,31 @@
           background-color: #5D5C5C;
           color: white;
       }
+
+      /*Input Elements*/
+      label, input {
+          display: inline-block;
+      }
+
+      label {
+          width: 30%;
+          text-align: right;
+      }
+
+      label + input {
+          width: 30%;
+          margin: 0 30% 0 4%;
+
+      }
+
+      input + input {
+          float: right;
+      }
+      button {
+          margin: 0 34% 0 4%;
+
+      }
+
 
   </style>
 </head>
@@ -133,17 +168,23 @@
 
 </div>
 <div class="col-span-2 main"><section id="main" class="item">
-        <label for="departure_city">Departure City:</label>
-        <input type="text" id="departure_city" name="name" placeholder="Departure City" required/><br/>
+        <form action="">
+            <label for="departure_city">Departure City:</label>
+            <input type="text" id="departure_city" name="name" placeholder="Departure City" required/><br/>
 
-        <label for="arrival_city">Arrival City:</label>
-        <input type="text" id="arrival_city" name="name" placeholder="Arrival City" required/><br/>
+            <label for="depart_date">Depart Date:</label>
+            <input type="text" id="depart_date" name="name" placeholder="Depart Date" required/><br/>
 
 
-        Depart Date:<input type="text" id="depart_date" name="name" placeholder="Depart Date" required/><br/>
-        Return Date:<input type="text" id="return_date" name="name" placeholder="Return Date" required/><br/>
-        <br/>
-        <button id="submit">Record Flight</button>
+            <label for="arrival_city">Arrival City:</label>
+            <input type="text" id="arrival_city" name="name" placeholder="Arrival City" required/><br/>
+
+            <label for="return_date">Return Date:</label>
+            <input type="text" id="return_date" name="name" placeholder="Return Date" required/><br/>
+            <br/>
+            <button id="submit">Record Flight</button>
+
+        </form>
 
         <br/></section></div>
 <div id="right-nav" class="col-span-1">
