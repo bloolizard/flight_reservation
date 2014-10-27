@@ -37,8 +37,13 @@ function getReservation(callback){
 }
 
 window.addEventListener('load', function(){
+
+    //add data to table
     function populateDataTable(data_obj){
-        var table = document.getElementById('my_flt_table');
+        var tbody = document.getElementById('my_flt_table_body');
+
+
+
         var tr = document.createElement('tr');
 
         // make an element for every prop in obj
@@ -50,7 +55,7 @@ window.addEventListener('load', function(){
         }
 
 
-        table.appendChild(tr);
+        tbody.appendChild(tr);
         console.log(data_obj.departcity);
         console.log(data_obj.departdate);
         console.log(data_obj.arrivalcity);
@@ -70,6 +75,18 @@ window.addEventListener('load', function(){
         });
     });
 
+    // returns back to home
+    var return_btn = document.getElementById('return_btn');
+    return_btn.addEventListener('click', function(){
+
+        var my_flt_section = document.getElementById('my_flt_section');
+        my_flt_section.style.display = 'none';
+
+        var flt_reserve_section = document.getElementById('flt_reserve_section');
+        flt_reserve_section.style.display = 'block';
+
+    });
+
 
     // retrieves reservation object from server
     var flt_act_btn = document.getElementById('my_flight_act_btn');
@@ -77,6 +94,10 @@ window.addEventListener('load', function(){
         // clear the main section
         var flt_reserve_section = document.getElementById('flt_reserve_section');
         flt_reserve_section.style.display = 'none';
+
+        //clear table first
+        var tbody = document.getElementById('my_flt_table_body');
+        tbody.innerHTML = "";
         // perform an AJAX call
         getReservation(function(data){
            var _data = JSON.parse(data);

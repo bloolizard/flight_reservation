@@ -117,7 +117,7 @@ a:link, a:visited {
 }
 
 a:hover {
-    padding: 5%;
+    padding: 4px;
     background-color: #5D5C5C;
     color: white;
 }
@@ -146,3 +146,12 @@ button {
 
 }
 
+/* Table Elements*/
+th {
+    font-size: 1.4em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    /*background-color: #A7C942;*/
+    color: black;
+}
