@@ -1,3 +1,7 @@
+(function(){
+
+
+
 function getFormData(form){
     return {
             departcity: form.departcity.value,
@@ -109,3 +113,5 @@ window.addEventListener('load', function(){
         // in a new element way.
     });
 });
+
+})();
