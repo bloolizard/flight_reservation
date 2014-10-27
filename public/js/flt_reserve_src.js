@@ -56,22 +56,19 @@ window.addEventListener('load', function(){
 
 
         tbody.appendChild(tr);
-        console.log(data_obj.departcity);
-        console.log(data_obj.departdate);
-        console.log(data_obj.arrivalcity);
-        console.log(data_obj.returndate);
     }
 
     // grab main window
     var main = document.getElementById('main');
-    console.log('main');
 
     // submit btn --> sends form data to server
     var submit_btn = document.getElementById('submit');
     submit_btn.addEventListener('click', function(){
         var flt_reserve_frm = document.forms.flt_reserve_form;
         makeAnAjaxCall(flt_reserve_frm, function(){
+
             alert('Thank you for your reservation');
+            flt_reserve_frm.reset();
         });
     });
 
@@ -102,7 +99,6 @@ window.addEventListener('load', function(){
         getReservation(function(data){
            var _data = JSON.parse(data);
            for (var i in _data){
-                console.log(_data[i]);
                // populate page
                populateDataTable(_data[i]);
             }
@@ -111,11 +107,5 @@ window.addEventListener('load', function(){
         var my_flt_section = document.getElementById('my_flt_section');
         my_flt_section.style.display = 'block';
         // in a new element way.
-
-
-
-//        var return_btn = document.createElement('button');
-//        return_btn.innerHTML = "Go Back"
-//        main.appendChild(return_btn);
     });
 });
