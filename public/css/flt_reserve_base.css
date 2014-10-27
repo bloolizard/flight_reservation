@@ -73,6 +73,10 @@ header {
     /*position: fixed;*/
 }
 
+#my_flt_section {
+    display: none;
+}
+
 footer {
     margin-bottom: 0px;
     width: 100%;

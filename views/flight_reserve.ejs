@@ -22,8 +22,9 @@
     </section>
 
 </div>
-<div class="col-span-2 main"><section id="main" class="item">
-        <form name="flt_reserve_form" action="">
+<div class="col-span-2 main">
+    <section id="flt_reserve_section" class="item">
+        <form name="flt_reserve_form">
             <label for="departure_city">Departure City:</label>
             <input type="text" id="departure_city" name="departcity" placeholder="Departure City" required/><br/>
 
@@ -37,11 +38,19 @@
             <label for="return_date">Return Date:</label>
             <input type="text" id="return_date" name="returndate" placeholder="Return Date" required/><br/>
             <br/>
-            <button id="submit">Record Flight</button>
-
         </form>
+        <button id="submit">Record Flight</button>
 
-        <br/></section></div>
+        <br/>
+    </section>
+    <section id="my_flt_section">
+        <div>
+            <table id="my_flt_table">
+
+            </table>
+        </div>
+    </section>
+</div>
 <div id="right-nav" class="col-span-1">
     <section class="item">
         <ul>
